@@ -52,7 +52,8 @@ func lissajous(out io.Writer) {
 			colorSectorId := uint8(math.Ceil(float64(posY) / colorSectorSize))
 			if colorSectorId > maxColorIdx {
 				colorSectorId = uint8(maxColorIdx) - (colorSectorId - uint8(maxColorIdx))
-			} else if colorSectorId < uint8(minColorIdx) {
+			}
+			if colorSectorId < uint8(minColorIdx) {
 				colorSectorId = uint8(minColorIdx)
 			}
 
